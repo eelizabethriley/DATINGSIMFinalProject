@@ -53,7 +53,7 @@ public class House {
      * @param gamePoints
      * @return gamePoints
      */
-    public int dormRoomEntrance(int gamePoints) {
+    public GameLoop dormRoomEntrance(GameLoop currentPlaythrough) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
         if (hasBeenDRE) {  // execute this branch when the player has been to this room before
             System.out.println("You re-enter your dorm room and notice that Jelly isn't around now.");
@@ -64,19 +64,19 @@ public class House {
                 System.out.println("Your roommate smiles when you enter the room. Yay! *** +10 POINTS *** \n");
                 System.out.println("Hey! It's nice to finally meet you in person. I'm Jess, but everyone calls me Jelly.  *Jelly goes back to unpacking* :D \n");
                 roommateFriendship = true;
-                gamePoints += 10;
+                currentPlaythrough.gamePoints += 10;
             } else {
                 System.out.println("Your roommate glares at you and seems to be mad you're breathing so loudly. *** -10 POINTS ***\n");
                 System.out.println(" 'Oh, hi. I guess you want to be in my room... that's cool I guess, I'm Jess' *Jess starts smoking weed (and doesn't even offer to share!) :( * \n");
                 roommateFriendship = false;
-                gamePoints -= 10;
+                currentPlaythrough.gamePoints -= 10;
             }
     
             System.out.println("You notice a -Smith Cookie- on your roommate's desk. You kind of want it. 'Hey roomie' you say, half smiling, 'Can I have that cookie?'\n ");
             if (roommateFriendship == true) {
                 System.out.println("'Sure! I wasn't even going to eat it anyway'\n Cool! Now it's in your nice Conaway Center Tote Bag. *** +5 POINTS *** \n");
-                // inventory.add("Smith Cookie");
-                gamePoints += 5;
+                currentPlaythrough.inventory.add("Smith Cookie");
+                currentPlaythrough.gamePoints += 5;
 
                 System.out.println("Eh... They kind of cute??? What do you do?? \n ** Shoot your shot?(type 'S')** \n ** No, that's a Terrible Idea (type 'T')** \n ** Squawk like a bird (type B)** \n ");
 
@@ -85,30 +85,30 @@ public class House {
                 switch (userResponse){
                     case "S":
                     System.out.println("No, I'm going to stop you. This is a horrible idea!! NEVER DATE YOUR ROOMMATE *** -15 POINTS ***\n");
-                    gamePoints -= 15;
+                    currentPlaythrough.gamePoints -= 15;
                     break;
 
                     case "T":
                     System.out.println("Good instincts kid! *** +10 POINTS *** \n");
-                    gamePoints += 10;
+                    currentPlaythrough.gamePoints += 10;
                     break;
 
                     case "B":
                     System.out.println("You confused them with your bird noises but it could have gone worse. *** +5 POINTS *** \n");
-                    gamePoints += 5;
+                    currentPlaythrough.gamePoints += 5;
                     break;
 
                     default:
                     System.out.println("There were worse options... *** -5 POINTS *** \n");
-                    gamePoints -= 5;
+                    currentPlaythrough.gamePoints -= 5;
                 }
             }
     
-            if (roommateFriendship == false) {
+            else {
                 System.out.println("'HELL NO, it's for Mr.Twinkles' *Jess proceeds to feed the cookie to her unregistered, feral, emotional support rat that lives on your dresser*  :((\n");
             }
             hasBeenDRE = true;
-        } return gamePoints;
+        } return currentPlaythrough;
     }
 /**
 * The player's kitchenette sequence and choices

@@ -14,7 +14,7 @@ public class GameLoop {
     private static HashMap<String, Room> mendenhallMap; // The Hashmap for the rooms in Mendenhall Center.
 
     // Store the number of points earned by the user, defaults at 0 and the user can gain or lose points based on their choices.
-    private int gamePoints;
+    protected int gamePoints;
 
     public ArrayList<String> inventory;
 
@@ -244,7 +244,7 @@ public class GameLoop {
                                             currentPlaythrough.gamePoints = gameHouse.yourDorm(currentPlaythrough.gamePoints);
                                         break;
                                         case "\nDORM ROOM:\n":
-                                            currentPlaythrough.gamePoints = gameHouse.dormRoomEntrance(currentPlaythrough.gamePoints);
+                                            currentPlaythrough = gameHouse.dormRoomEntrance(currentPlaythrough);
                                         break;
                                         case "\nHOUSE KITCHENETTE:\n":
                                             currentPlaythrough.gamePoints = gameHouse.houseKitchenette(currentPlaythrough.gamePoints);
