@@ -370,7 +370,7 @@ public class GameLoop {
             // ***********************************************************************
             // And as the player interacts, you'll check to see if the game should end
             //  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
-            if (currentPlaythrough.gamePoints >= 100 || currentPlaythrough.gamePoints <= -30) {
+            if (currentPlaythrough.gamePoints >= 100 || currentPlaythrough.gamePoints <= -50) {
                 // Stopping conditions: Win, 100 or more points, lose, -30 or less points.
                 stillPlaying = false;
             }
