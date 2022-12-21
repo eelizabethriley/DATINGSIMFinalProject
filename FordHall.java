@@ -198,6 +198,18 @@ public class FordHall {
                     
                     System.out.println("You take a deep breath and just say it 'Hey, I think you're cool and I'd like to hangout with you or something. Are you on Instagram?' \n * PAUSE *\n BIKE GAVE YOU HIS INSTA :D *** +20 POINTS *** \n ");
                     gamePoints += 20;
+                    
+                    System.out.println("You look closer at the missing cat photo. If only you had something to comfort Bike :( ");
+                    
+                    if (currentPlaythrough.inventory.contains("CAT KEYCHAIN")){
+                        System.out.println(" 'Hey... You cat kind of reminds me of this key-chain, do you want it?' \n Your crush smiles at you'WOW! THAT'S SO SWEET!!'  *** +15 POINTS *** \n");
+                        currentPlaythrough.inventory.remove("CAT KEYCHAIN");
+                        currentPlaythrough.gamePoints += 15;
+                    } else {
+                        System.out.println("Yeah, if only :( . Because of your empathy: *** +5 POINTS ***");
+                        currentPlaythrough.gamePoints += 5;
+                    }
+                    
                 } else if (userResponse.equals("C")) {
                     System.out.println("You compliment Bike's doc martens and he's really flattered! :D *** +10 POINTS *** ");
                     gamePoints += 10;
@@ -209,16 +221,7 @@ public class FordHall {
                     System.out.println("Well, now he's pretending to read a text messsage because you didn't say anything. Good job. \n");
                 }
                 
-                System.out.println("You look closer at the missing cat photo. If only you had something to comfort Bike :( ");
-                    
-                    if (currentPlaythrough.inventory.contains("CAT KEYCHAIN")){
-                        System.out.println(" 'Hey... You cat kind of reminds me of this key-chain, do you want it?' \n Your crush smiles at you'WOW! THAT'S SO SWEET!!'  *** +15 POINTS *** \n");
-                        currentPlaythrough.inventory.remove("CAT KEYCHAIN");
-                        currentPlaythrough.gamePoints += 15;
-                    } else {
-                        System.out.println("Yeah, if only :( . Because of your empathy: *** +5 POINTS ***");
-                        currentPlaythrough.gamePoints += 5;
-                    }
+      
             }
             hasBeenBB = true;
         } return gamePoints;
