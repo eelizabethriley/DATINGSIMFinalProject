@@ -1,1 +1,8 @@
 Design justification (including a brief discussion of at least one alternative you considered)
+explain why we structured or code the way we did and then talk a little bit about another way that might have worked but wouldn’t be as good.
+
+To begin, we have the user individualize the character in this intro sequences in GameLoop.java. Orignially we had this sequence (where that player can pick a name, year, and house) in it's own class but then we figured it'd be better to simply insert/modify it in the GameLoop.java. Then from that point, after all the user input is collected, the player is told the rules and placed in their house. In GameLoop.java, all the hashmaps for the player to move around in each location is at the bottom. We did this before it enable the movement code to be less repetive and universal in all the other class loactions. In each location class (House.java,FordHall.java, and MendenhallCenter.java) there's a series of if/else statements that execute depending on the user input. We did this because it both simulates a real life dating simulator with a series of choices that the user can pick and the design of ensures the user's choices matter.
+
+
+
+An alternative design that was considered at the very beginning was including everything in one class. While that would have made initial issues like how the inventory and points could be follow the player easier, it strayed from the efficiency of object oriented programming. After some discussion, we were able to get things going in it's own individual class and fix the other issues we weren't sure how to tackle before. Additionally, we originally have a series of booleans for moving from location to location but we eventually switched to a hashmap which was much better.
