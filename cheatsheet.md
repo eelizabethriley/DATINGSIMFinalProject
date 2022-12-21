@@ -23,12 +23,12 @@ IN GAME COMMANDS:
 
 If your game includes challenges that must be overcome to win, also list them below.
 
-The winning condition of the game is to have greater than or equal to 100 points. Going to mendenhall and beating the minotaur will greatly increase
+The winning condition of the game is to have greater than or equal to 100 points. Going to Mendenhall and beating the minotaur will greatly increase
 your points and thus make you likely to win. Other ways to earn points are making good decisions during other evetns in the game, especially when
 talking to "crushes."
 
 If the player's score drops to 50 points or fewer, they will automatically lose. Again, the minotaur fight will change the player's points significantly,
-and losing will lose the player 30 points immediately.
+and losing will lose the player 30 points immediately. Points are lost when the player embarasses themself or makes irresponsible choices.
 
 Events like the minotaur fight and roommate are randomized to be in the player's favor or not, so winning is in part up to chance.
 
