@@ -125,14 +125,15 @@ public class MendenhallCenter {
                     } else {
                         System.out.println("The minotaur lands its stride and lunges right towards you, arcing a long cardboard tube down onto your head. Ow, that hurt and made you feel pretty stupid and silly. \n Panting, you step back, completely exhausted from your efforts. The Minotaur begins laughing now, its deep rumble like the sound of 2 to 3 college students laughing under their breaths from beneath a costume. Uh oh. It looks like this fight is over. \n");
                         winOrLose = false;
-                        gamePoints -= 10;
+                        gamePoints -= 30;
                     }
                     if (winOrLose == true) {
                         System.out.println("As the 'Minotaur' scrapes themsel(ves?) together and trudges away down the hall towards the costume shop, your Crush reappears and runs up to you, looking a bit flustered. They give you a grin and begin laughing, seeming to share in your incredulity at the situation. \n 'Hey, thanks for helping me out back there. I'm not sure how I'd have handled all that if you weren't around'. Nice! You kept them safe from the theater students' antics!! \n" +
                         "'You're a pretty cool person, PLAYERNAME. We should get coffee together sometime :)' YAYY!! Looks like this could be the start of something special...or at least a nice healthy friendship!");
+                        gamePoints += 70;
                     }
                     if (winOrLose == false) {
-                        System.out.println("You hunch over, trembling, nerves frayed with the hope that your crush will come back for you, but they're now nowhere to be seen. You stand frozen and left behind as the Minotaur points at laughs at you for being such a complete and utter loser. Better luck next time... GAME OVER! \n");
+                        System.out.println("You hunch over, trembling, nerves frayed with the hope that your crush will come back for you, but they're now nowhere to be seen. You stand frozen and left behind as the Minotaur points at laughs at you for being such a complete and utter loser. Better luck next time...\n");
                     }
 
 
