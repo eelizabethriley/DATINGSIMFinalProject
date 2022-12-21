@@ -115,7 +115,7 @@ public class House {
  * @param gamePoints
  * @return gamePoints
  */
-    public int houseKitchenette(int gamePoints) {
+    public GameLoop houseKitchenette(GameLoop currentPlaythrough) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
         if(hasBeenHK) {
             System.out.println("The kitchenette is quiet now.");
@@ -126,22 +126,34 @@ public class House {
             switch (userResponse) {
                 case "B":
                     System.out.println("Quirked up you goated with the sause busts it down platonic style and impress them with your sweet moves! *** +15 POINTS *** \n");
-                    gamePoints += 15;
+                    currentPlaythrough.gamePoints += 15;
                 break;
                 case "I":
                     System.out.println("You say 'Hi, I just moved in, I live in room 302. It's nice to meet you'. That was kind of basic but they seem to like you. *** +5 POINTS *** \n");
-                    gamePoints += 5;
+                    currentPlaythrough.gamePoints += 5;
                 break;
                 case "M":
                     System.out.println("You start trash talking your rival house that's basically a clone of your house and gain their respect. Nothing builds camaraderie more than a common enemy. *** +10 POINTS *** \n");
-                    gamePoints += 10;
+                    currentPlaythrough.gamePoints += 10;
                 break;
                 default: 
                     System.out.println("OH NO! You fail to say anything and now they're really uncomfortable as you stare blankly at them. *** -10 POINTS *** \n");
-                    gamePoints -= 10;
+                    currentPlaythrough.gamePoints -= 10;
+            }
+            if (userResponse.equals("B") || (userResponse.equals("M"))) {
+                System.out.println("One of them stops baking and comes closer to you. 'Eh kid' they say in a Brooklyn esqe accent 'I like your style. I found this -Cat Keychain- in the free bin. It's kind of shiny and cringy, like you. Do you want it? (Y/N)' \n");
+                userResponse = userInput.nextLine().toUpperCase();
+                if (userResponse.equals("Y")) {
+                    inventory.add("Cat Keychain");
+                    currentPlaythrough.gamePoints += 5;
+                    System.out.println("Cool! Now it's in your nice Conaway Center Tote Bag. *** +5 POINTS *** \n");
+                } else {
+                    System.out.println("Alright kid, keep it moving then. \n");
+                }
+    
             }
             hasBeenHK = true;
-        } return gamePoints;
+        } return currentPlaythrough;
     }
 /**
  * The player's laundry room sequence and choices
