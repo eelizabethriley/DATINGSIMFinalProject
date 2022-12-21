@@ -47,7 +47,7 @@ public class FordHall {
      * @param inventory
      * @return gamePoints
      */
-    public int terrace(int gamePoints, ArrayList<String> inventory) {
+    public GameLoop terrace(GameLoop currentPlaythrough) {
         if(hasBeenT) {
             // not much
         } else {
@@ -61,19 +61,19 @@ public class FordHall {
             switch (userResponse) {
                 case "H":
                     System.out.println(" 'I.. uh, wanted to see what was up there, I didn't mean to startle you' You say to her. She seems to be impressed by your honesty and likes your awkwardness *** +10 POINTS *** \n");
-                    gamePoints += 10;
+                    currentPlaythrough.gamePoints += 10;
                 break;
                 case "L":
                     System.out.println("You say 'I... wanted to... see if there were any ghosts up here. Yeah, that's it, ~ghosts~'. She seems to know you're lying but don't care enough... Success, I guess, but lying isn't good! *** +1 POINTS *** \n");
-                    gamePoints += 1;
+                    currentPlaythrough.gamePoints += 1;
                 break;
                 case "C":
                     System.out.println("'Woah!' You say 'Those are cool socks!' The said socks are green and have corgis on them. Your crush is so flattered you noticed and blushes!! *** +15 POINTS *** \n");
-                    gamePoints += 15;
+                    currentPlaythrough.gamePoints += 15;
                 break;
                 default: 
                     System.out.println("OH NO! You fail to say anything and now she's having a pretend phone with her friend because you scared her so much :((((. *** -10 POINTS *** \n");
-                    gamePoints -= 10;
+                    currentPlaythrough.gamePoints -= 10;
              } 
 
              if (userResponse.equals("H") || (userResponse.equals("C")) || (userResponse.equals("L"))) {
@@ -84,35 +84,35 @@ public class FordHall {
                 if (userResponse.equals("S")) {
                     
                     System.out.println("You start sweating profusely and think about all those TikToks you watched. Nervously, you bite your lower lip, squint your eyes, and say 'Heyyyyyy, would you wanna, Compass Cafe... I mean, if you're not, not to say, uhhhhh, you seem nice... coffee? :D' Well... it's not like you've offended her *** +5 POINTS *** ");
-                    gamePoints += 5;
+                    currentPlaythrough.gamePoints += 5;
                 } else if (userResponse.equals("Q")) {
                     System.out.println("You smile nervously and say'Are you a cat person or a dog person?' ");
                     if (funQuestionReactionRandomizer % 2 == 1) {
                         System.out.println(" 'I love both! Thanks for asking... cutie ;)' *** +10 POINTS *** \n");
                         funQuestion = true;
-                        gamePoints += 10;
+                        currentPlaythrough.gamePoints += 10;
                     } else {
                         System.out.println(" 'DOGS AND CATS ARE ALWAYS MEAN TO ME... God, you ruined my day!!' *** -10 POINTS ***\n");
                         funQuestion = false;
-                        gamePoints -= 10;
+                        currentPlaythrough.gamePoints -= 10;
                     }
                 } else if (userResponse.equals("A")) {
                     System.out.println(" 'Oh, I'm just killing time... I ordered a snack at the Compass Cafe but I'm like 534 in line :(  I just wish I had a cookie or something' *** +5 POINTS ***\n");
-                    gamePoints+=5;
-                    if (inventory.contains("Smith Cookie")){
+                    currentPlaythrough.gamePoints+=5;
+                    if (currentPlaythrough.inventory.contains("SMITH COOKIE")){
                         System.out.println(" 'Hey... I think you're really neat! I have this Smith Cookie, do you want it?' \n Your crush smiles at you'WOW! THANK YOU SO MUCH!!'  *** +15 POINTS *** \n");
-                        inventory.remove("Smith cookie");
-                        gamePoints += 15;
+                        currentPlaythrough.inventory.remove("SMITH COOKIE");
+                        currentPlaythrough.gamePoints += 15;
                     } else {
                         System.out.println("'Gee, that sucks' you say sheepishly, wishing you could help. Because of your empathy: *** +5 POINTS ***");
-                        gamePoints += 5;
+                        currentPlaythrough.gamePoints += 5;
     
                     }
                 } else {
                     System.out.println("Well, now Portabella is calling CAMPO. Good job. \n");
                 }
              } 
-         }  return gamePoints;
+         }  return currentPlaythrough;
     }
 
     /**
@@ -236,7 +236,6 @@ public class FordHall {
         // This room is the same whether or not you have visited it, since there are no events here
         System.out.println("Where would you like to go from the exit? (n, e, s, w)");
         userResponse = userInput.nextLine().toUpperCase();
-        Room currentRoom = fordMap.get("S2");
         ArrayList<String> newLocation = new ArrayList<String>();
         switch (userResponse) {
             case "N":

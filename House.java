@@ -75,7 +75,7 @@ public class House {
             System.out.println("You notice a -Smith Cookie- on your roommate's desk. You kind of want it. 'Hey roomie' you say, half smiling, 'Can I have that cookie?'\n ");
             if (roommateFriendship == true) {
                 System.out.println("'Sure! I wasn't even going to eat it anyway'\n Cool! Now it's in your nice Conaway Center Tote Bag. *** +5 POINTS *** \n");
-                currentPlaythrough.inventory.add("Smith Cookie");
+                currentPlaythrough.inventory.add("SMITH COOKIE");
                 currentPlaythrough.gamePoints += 5;
 
                 System.out.println("Eh... They kind of cute??? What do you do?? \n ** Shoot your shot?(type 'S')** \n ** No, that's a Terrible Idea (type 'T')** \n ** Squawk like a bird (type B)** \n ");
@@ -144,13 +144,12 @@ public class House {
                 System.out.println("One of them stops baking and comes closer to you. 'Eh kid' they say in a Brooklyn esqe accent 'I like your style. I found this -Cat Keychain- in the free bin. It's kind of shiny and cringy, like you. Do you want it? (Y/N)' \n");
                 userResponse = userInput.nextLine().toUpperCase();
                 if (userResponse.equals("Y")) {
-                    inventory.add("Cat Keychain");
+                    currentPlaythrough.inventory.add("CAT KEYCHAIN");
                     currentPlaythrough.gamePoints += 5;
                     System.out.println("Cool! Now it's in your nice Conaway Center Tote Bag. *** +5 POINTS *** \n");
                 } else {
                     System.out.println("Alright kid, keep it moving then. \n");
                 }
-    
             }
             hasBeenHK = true;
         } return currentPlaythrough;
@@ -239,7 +238,6 @@ public class House {
         // This room is the same whether or not you have visited it, since there are no events here, so there is just one branch.
         System.out.println("Where would you like to go from the exit? (n, e, s, w)");
         userResponse = userInput.nextLine().toUpperCase();
-        Room currentRoom = houseMap.get("S2");
         ArrayList<String> newLocation = new ArrayList<String>();
         switch (userResponse) {
             case "N":

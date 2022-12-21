@@ -34,7 +34,6 @@ public class MendenhallCenter {
             // This room is the same whether or not you have visited it, since there are no events here, so there is just one branch.
             System.out.println("Pick a new location.");
             userResponse = userInput.nextLine().toUpperCase();
-            Room currentRoom = mendenhallMap.get("N1");
             ArrayList<String> newLocation = new ArrayList<String>();
             switch (userResponse) {
                 case "N":

@@ -203,9 +203,16 @@ public class GameLoop {
                     // Print out the description of the current room.
                     System.out.println(currentRoom.description);
                 break;
-                case "GRAB": System.out.println("add item to inventory"); // TODO: Add the specified item to the inventory array list
-                break;
-                case "DROP": System.out.println("drop the item"); // TODO: Remove the specified item from the inventory array list
+                case "DROP": System.out.println("drop an item"); // Remove the specified item from the inventory array list
+                    System.out.println("Which item would you like to drop?");
+                    userControl.printInventory(currentPlaythrough);
+                    userResponse = userInput.nextLine().toUpperCase();
+                    if (currentPlaythrough.inventory.contains(userResponse)) {
+                        currentPlaythrough.inventory.remove(userResponse);
+                        System.out.println("You have dropped the " + userResponse + ".");
+                    } else {
+                        System.out.println("Sorry, there is no item of that name in your inventory. \n Hint: type the item with the exact spelling and spaces as shown in the list.");
+                    }
                 break;
                 case "N":  // go north
                     currentRoom = userControl.goNorth(currentRoom, currentMap);
@@ -222,12 +229,8 @@ public class GameLoop {
                 case "CHECK SCORE": // print the current number of game points
                     System.out.println("CURRENT SCORE: " + currentPlaythrough.gamePoints);
                 break;
-                case "CHECK INVENTORY": // TODO: Print out the items currently held in the inventory
-                    System.out.print("Current Inventory: ");
-                    for(int i =0; i<currentPlaythrough.inventory.size(); i++) {
-                        System.out.println("-- " + currentPlaythrough.inventory.get(i));
-                    }
-                    System.out.println(" ");
+                case "CHECK INVENTORY": // Print out the items currently held in the inventory
+                    userControl.printInventory(currentPlaythrough);
                 break;
                 case "QUIT": // exit the game
                     System.out.println("Ending the game.");
@@ -251,7 +254,7 @@ public class GameLoop {
                                             currentPlaythrough = gameHouse.dormRoomEntrance(currentPlaythrough);
                                         break;
                                         case "\nHOUSE KITCHENETTE:\n":
-                                            currentPlaythrough.gamePoints = gameHouse.houseKitchenette(currentPlaythrough.gamePoints);
+                                            currentPlaythrough = gameHouse.houseKitchenette(currentPlaythrough);
                                         break;
                                         case "\nLAUNDRY ROOM:\n":
                                             currentPlaythrough.gamePoints = gameHouse.laundryRoom(currentPlaythrough.gamePoints);
@@ -301,7 +304,7 @@ public class GameLoop {
                                             currentPlaythrough.gamePoints = gameFordHall.terraceEdge(currentPlaythrough.gamePoints);
                                         break;
                                         case "\nTERRACE:\n":
-                                            currentPlaythrough.gamePoints = gameFordHall.terrace(currentPlaythrough.gamePoints, currentPlaythrough.inventory);
+                                            currentPlaythrough = gameFordHall.terrace(currentPlaythrough);
                                         break;
                                         case "\nLOUNGE:\n":
                                             currentPlaythrough.gamePoints = gameFordHall.lounge(currentPlaythrough.gamePoints);

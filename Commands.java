@@ -15,8 +15,17 @@ public class Commands {
     public void showOptions() {
         System.out.println("\nAvailable game commands:" +
         "\n + 'HELP' - print a list of available commands. \n + 'LOOK AROUND' - print out a description of the current surroundings." + 
-        "\n + 'GRAB x' - add the item x to your inventory, typed as the item is spelled between asterisks (**item name**). \n + 'DROP x' - remove the item x from your inventory. " +
-        "\n + 'N' - go north on the map. \n + 'E' - go east on the map. \n + 'S' - go south on the map. \n + 'W' - go west on the map. \n + 'CHECK SCORE' - check how many points you currently have. \n + 'CHECK INVENTORY' - check what items you currently have in your inventory. \n + 'QUIT' - exit the game. \n");
+        "\n + 'DROP x' - remove the item x from your inventory. " +
+        "\n + 'N' - go north on the map. \n + 'E' - go east on the map. \n + 'S' - go south on the map. \n + 'W' - go west on the map." + 
+        "\n + 'CHECK SCORE' - check how many points you currently have. \n + 'CHECK INVENTORY' - check what items you currently have in your inventory. \n + 'QUIT' - exit the game. \n");
+    }
+
+    public void printInventory(GameLoop currentPlaythrough) {
+        System.out.print("Current Inventory: ");
+        for(int i =0; i<currentPlaythrough.inventory.size(); i++) {
+            System.out.println("-- " + currentPlaythrough.inventory.get(i));
+        }
+        System.out.println(" ");
     }
 
         // ** NAVIGATION METHODS **
