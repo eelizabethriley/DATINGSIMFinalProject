@@ -223,7 +223,11 @@ public class GameLoop {
                     System.out.println("CURRENT SCORE: " + currentPlaythrough.gamePoints);
                 break;
                 case "CHECK INVENTORY": // TODO: Print out the items currently held in the inventory
-                    System.out.println("Current Inventory:" + currentPlaythrough.inventory);
+                    System.out.print("Current Inventory: ");
+                    for(int i =0; i<currentPlaythrough.inventory.size(); i++) {
+                        System.out.println("-- " + currentPlaythrough.inventory.get(i));
+                    }
+                    System.out.println(" ");
                 break;
                 case "QUIT": // exit the game
                     System.out.println("Ending the game.");
