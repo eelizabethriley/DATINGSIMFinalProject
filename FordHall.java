@@ -202,7 +202,7 @@ public class FordHall {
                     System.out.println("You look closer at the missing cat photo. If only you had something to comfort Bike :( ");
                     
                     if (currentPlaythrough.inventory.contains("CAT KEYCHAIN")){
-                        System.out.println(" 'Hey... You cat kind of reminds me of this key-chain, do you want it?' \n Your crush smiles at you'WOW! THAT'S SO SWEET!!'  *** +15 POINTS *** \n");
+                        System.out.println(" 'Hey... Your cat kind of reminds me of this key-chain, do you want it?' \n Your crush smiles at you'WOW! THAT'S SO SWEET!!'  *** +15 POINTS *** \n");
                         currentPlaythrough.inventory.remove("CAT KEYCHAIN");
                         currentPlaythrough.gamePoints += 15;
                     } else {
