@@ -208,6 +208,17 @@ public class FordHall {
                 } else {
                     System.out.println("Well, now he's pretending to read a text messsage because you didn't say anything. Good job. \n");
                 }
+                
+                System.out.println("You look closer at the missing cat photo. If only you had something to comfort Bike :( ");
+                    
+                    if (currentPlaythrough.inventory.contains("CAT KEYCHAIN")){
+                        System.out.println(" 'Hey... You cat kind of reminds me of this key-chain, do you want it?' \n Your crush smiles at you'WOW! THAT'S SO SWEET!!'  *** +15 POINTS *** \n");
+                        currentPlaythrough.inventory.remove("CAT KEYCHAIN");
+                        currentPlaythrough.gamePoints += 15;
+                    } else {
+                        System.out.println("Yeah, if only :( . Because of your empathy: *** +5 POINTS ***");
+                        currentPlaythrough.gamePoints += 5;
+                    }
             }
             hasBeenBB = true;
         } return gamePoints;
