@@ -313,7 +313,7 @@ public class GameLoop {
                                             currentPlaythrough.gamePoints = gameFordHall.hallway(currentPlaythrough.gamePoints);
                                         break;
                                         case "\nBULLETIN BOARD:\n":
-                                            currentPlaythrough.gamePoints = gameFordHall.bulletinBoard(currentPlaythrough.gamePoints);
+                                            currentPlaythrough = gameFordHall.bulletinBoard(currentPlaythrough);
                                         break;
                                         case "\nENTRANCE:\n":
                                             gameFordHall.entrance();

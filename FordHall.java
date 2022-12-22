@@ -167,7 +167,7 @@ public class FordHall {
      * @param gamePoints
      * @return gamePoints
      */
-    public int bulletinBoard(int gamePoints) {
+    public GameLoop bulletinBoard(GameLoop currentPlaythrough) {
         if(hasBeenBB) {
             System.out.println("You stand before the bulletin board, scanning the various posters and notices pinned up. \nIt looks like there are some performances from student groups coming up, and some guest lectures happening around ford. \nOne of the posters is a deep red color and contains no information except a crpytic black bull symbol. \n You yawn.");
         } else {
@@ -176,19 +176,19 @@ public class FordHall {
             switch(userResponse) {
                 case "A":
                     System.out.println(" 'So... Bicheal?' You say nervously with a smile. Bicheal smiles back at you! 'Yeah, it's a family name. I go by Bike for short'  *** +5 POINTS *** \n");
-                    gamePoints += 5;
+                    currentPlaythrough.gamePoints += 5;
                 break;
                 case "W":
                     System.out.println("You wink agressively and Bicheal who is throughly confused. Although, he thinks it's silly (in a good way!) *** +15 POINTS *** \n");
-                    gamePoints += 15;
+                    currentPlaythrough.gamePoints += 15;
                 break;
                 case "H":
                     System.out.println(" You say hi... Bicheal says hi back and then goes back to what he was doing *** +10 POINTS *** \n");
-                    gamePoints += 10;
+                    currentPlaythrough.gamePoints += 10;
                 break;
                 default:
                     System.out.println("OH NO! You fail to say anything and now he's shuffling around and uncomfy :((((. *** -10 POINTS *** \n");
-                    gamePoints -= 10;
+                    currentPlaythrough.gamePoints -= 10;
             }
             if (userResponse.equals("A") || (userResponse.equals("W")) || (userResponse.equals("H"))) {
                 System.out.println("'Bicheal (or Bike) steps closer with a little smile. Okay, here's your chance! What do you do next??? \n ** Just say it (type 'J')** \n ** Compliment (type 'C')** \n ** Break it down~ (type B)**");
@@ -197,7 +197,7 @@ public class FordHall {
                 if (userResponse.equals("J")) {
                     
                     System.out.println("You take a deep breath and just say it 'Hey, I think you're cool and I'd like to hangout with you or something. Are you on Instagram?' \n * PAUSE *\n BIKE GAVE YOU HIS INSTA :D *** +20 POINTS *** \n ");
-                    gamePoints += 20;
+                    currentPlaythrough.gamePoints += 20;
                     
                     System.out.println("You look closer at the missing cat photo. If only you had something to comfort Bike :( ");
                     
@@ -212,11 +212,11 @@ public class FordHall {
                     
                 } else if (userResponse.equals("C")) {
                     System.out.println("You compliment Bike's doc martens and he's really flattered! :D *** +10 POINTS *** ");
-                    gamePoints += 10;
+                    currentPlaythrough.gamePoints += 10;
     
                 } else if (userResponse.equals("B")) {
                     System.out.println("You ~break it down~ by having a nervous breakdown because you're so nervous. Even if Bike is really worried/confused now, your feelings are valid *** +5 POINTS *** \n");
-                    gamePoints += 5;
+                    currentPlaythrough.gamePoints += 5;
                 } else {
                     System.out.println("Well, now he's pretending to read a text messsage because you didn't say anything. Good job. \n");
                 }
@@ -224,7 +224,7 @@ public class FordHall {
       
             }
             hasBeenBB = true;
-        } return gamePoints;
+        } return currentPlaythrough;
     }
 
     /**

@@ -16,14 +16,12 @@ public class House {
     //   A boolean that stores whether or not the user's roommate likes them.
     boolean roommateFriendship;
 
-    public ArrayList<String> inventory;
 
     //  Take in input from the user to make choices during certain events.
     Scanner userInput = new Scanner(System.in);
     String userResponse = ""; // Storage for user's responses
     
     public House() {
-        this.inventory = new ArrayList<String>();
         hasBeenYD = false;
         hasBeenDRE = false;
         hasBeenHK = false;
@@ -99,7 +97,7 @@ public class House {
                     break;
 
                     default:
-                    System.out.println("There were worse options... *** -5 POINTS *** \n");
+                    System.out.println("Well, there were worse options... *** -5 POINTS *** \n");
                     currentPlaythrough.gamePoints -= 5;
                 }
             }
@@ -112,8 +110,8 @@ public class House {
     }
 /**
 * The player's kitchenette sequence and choices
- * @param gamePoints
- * @return gamePoints
+ * @param currentPlaythrough - the GameLoop object we created in the main of GameLoop
+ * @return GameLoop - the GameLoop updated with new point and inventory values
  */
     public GameLoop houseKitchenette(GameLoop currentPlaythrough) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -156,8 +154,8 @@ public class House {
     }
 /**
  * The player's laundry room sequence and choices
- * @param gamePoints
- * @return gamePoints
+ * @param gamePoints the points from the main of GameLoop, from currentPlaythrough.gamePoints
+ * @return gamePoints updated points with loss or gain from choices
  */
     public int laundryRoom(int gamePoints) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -172,7 +170,7 @@ public class House {
     /**
      * The player's house lounge room sequence
      * @param gamePoints
-     * @return gamePoints
+     * @return gamePoints updated points with loss or gain from choices
      */
     public int houseLounge(int gamePoints) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -186,7 +184,7 @@ public class House {
         /**
         * The player's library lounge room sequence and choices
          * @param gamePoints
-         * @return gamePoints
+         * @return gamePoints gamePoints updated points with loss or gain from choices
          */
     public int loungeLibrary(int gamePoints) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -227,10 +225,10 @@ public class House {
 
     /**
      * The player's house and current location exit tracker
-     * @param houseMap
+     * @param houseMap HashMap<String, Room> from GameLoop that contains all the rooms in the house, so we can set a new room
      * @param fordMap
      * @param mendenhallMap
-     * @return currentRoom
+     * @return newLocation an ArrayList<String> that contains our destination in 2 strings, the new Map at index 0 and the new Room at index 1 
      */
     //public Room houseExit(HashMap<String, Room> houseMap, HashMap<String, Room> fordMap, HashMap<String, Room> mendenhallMap) {
 

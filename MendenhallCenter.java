@@ -4,19 +4,16 @@ import java.util.Scanner;
 
 public class MendenhallCenter {
         //    Visited Room Trackers: hasBeen boolean variables that indicate whether or not the player has been in this room before.
-        boolean hasBeenB; // has been in the "YourDorm" room
+        boolean hasBeenB; // has been in the "Basement" room
     
         //   A boolean that stores whether or not the user's roommate likes them.
-        boolean roommateFriendship;
         boolean winOrLose;
-        public ArrayList<String> inventory;
     
         //  Take in input from the user to make choices during certain events.
         Scanner userInput = new Scanner(System.in);
         String userResponse = ""; // Storage for user's responses
         
         public MendenhallCenter() {
-            this.inventory = new ArrayList<String>();
         }
     
         public void mendenhallLobby() {

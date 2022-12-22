@@ -10,7 +10,7 @@ public class Commands {
     }
 
 /**
- * Shows the user their options
+ * Print out a list of avaiable commands.
  */
     public void showOptions() {
         System.out.println("\nAvailable game commands:" +
@@ -30,7 +30,7 @@ public class Commands {
 
         // ** NAVIGATION METHODS **
         /**
-         * Allows players to move to the north side of the room
+         * Allows players to move to the room north of the current room
          * @param currentRoom
          * @param currentMap
          * @return currentRoom
