@@ -20,6 +20,10 @@ public class Commands {
         "\n + 'CHECK SCORE' - check how many points you currently have. \n + 'CHECK INVENTORY' - check what items you currently have in your inventory. \n + 'QUIT' - exit the game. \n");
     }
 
+    /**
+     * Print out a list of all the items in the inventory
+     * @param currentPlaythrough an intance of GameLoop for the playthrough current running. Stores inventory and points, passed in so that we can access the inventory.
+     */
     public void printInventory(GameLoop currentPlaythrough) {
         System.out.print("Current Inventory: ");
         for(int i =0; i<currentPlaythrough.inventory.size(); i++) {
@@ -31,9 +35,9 @@ public class Commands {
         // ** NAVIGATION METHODS **
         /**
          * Allows players to move to the room north of the current room
-         * @param currentRoom
-         * @param currentMap
-         * @return currentRoom
+         * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the north direction, and if so which room is north (exitNorth)
+         * @param currentMap the map of the room the player is currently in, we need this to access the exitNorth for the room
+         * @return currentRoom in the GameLoop we will set the current room to this new room, the exitNorth of the room originally passed in
          */
     public Room goNorth(Room currentRoom, HashMap<String, Room> currentMap) {
         // Check which map we are in, then check which room this is, then change current room to the room north of this one
@@ -47,10 +51,10 @@ public class Commands {
         } return currentRoom;
     }
         /**
-        * Allows players to move to the east side of the room
-        * @param currentRoom
-        * @param currentMap
-        * @return currentRoom
+        * Allows players to move to the room east of the current room
+        * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the east direction, and if so which room is north (exitEast)
+        * @param currentMap the map of the room the player is currently in, we need this to access the exitEast for the room
+        * @return currentRoom in the GameLoop we will set the current room to this new room, the exitEast of the room originally passed in
         */
     public Room goEast(Room currentRoom, HashMap<String, Room> currentMap) {
         if(currentRoom.isExit("E")) {
@@ -64,12 +68,11 @@ public class Commands {
     }
 
         /**
-        * Allows players to move to the west side of the room
-         * @param currentRoom
-         * @param currentMap
-         * @return currentRoom
-         */
-
+        * Allows players to move to room west of the current room
+        * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the north direction, and if so which room is north (exitWest)
+        * @param currentMap the map of the room the player is currently in, we need this to access the exitWest for the room
+        * @return currentRoom in the GameLoop we will set the current room to this new room, the exitWest of the room originally passed in
+        */
     public Room goWest(Room currentRoom, HashMap<String, Room> currentMap) {
         if(currentRoom.isExit("W")) {
             System.out.print("\n> You moved west into the next room. ");
