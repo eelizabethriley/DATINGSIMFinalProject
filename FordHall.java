@@ -237,10 +237,10 @@ public class FordHall {
 
     /**
      * The player's options in regards to leaving Ford Hall
-     * @param houseMap
-     * @param fordMap
-     * @param mendenhallMap
-     * @return currentRoom
+     * @param houseMap HashMap<String, Room> from GameLoop that contains all the rooms in the house, so we can set a new room
+     * @param fordMap HashMap<String, Room> from GameLoop that contains all the rooms in Ford Hall, so we can set a new room
+     * @param mendenhallMap HashMap<String, Room> from GameLoop that contains all the rooms in Mendenhall, so we can set a new room
+     * @return newLocation an ArrayList<String> that contains our destination in 2 strings, the new Map at index 0 and the new Room at index 1 
      */
     public ArrayList<String> fordExit(HashMap<String, Room> houseMap, HashMap<String, Room> fordMap, HashMap<String, Room> mendenhallMap) {
         // This room is the same whether or not you have visited it, since there are no events here, so there is just one branch.

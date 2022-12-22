@@ -9,9 +9,9 @@ public class Player {
     /* Full constructor for a player. */
     /**
      * All the player's chosen personal information
-     * @param name
-     * @param classYear
-     * @param playerHouse
+     * @param name name of this player
+     * @param classYear player's class year (2026, 2025, 2024, 2023)
+     * @param playerHouse player's Smith house (Cutter, Wilson, Morris, etc.)
      */
     public Player(String name, int classYear, String playerHouse) {
         // this.inventory = new ArrayList<String>();

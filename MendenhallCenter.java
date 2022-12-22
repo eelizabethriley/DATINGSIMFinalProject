@@ -25,10 +25,10 @@ public class MendenhallCenter {
 
         /**
          * Options for the player to pick a location on the map
-         * @param houseMap
-         * @param fordMap
-         * @param mendenhallMap
-         * @return
+        * @param houseMap HashMap<String, Room> from GameLoop that contains all the rooms in the house, so we can set a new room
+        * @param fordMap HashMap<String, Room> from GameLoop that contains all the rooms in Ford Hall, so we can set a new room
+        * @param mendenhallMap HashMap<String, Room> from GameLoop that contains all the rooms in Mendenhall, so we can set a new room
+        * @return newLocation an ArrayList<String> that contains our destination in 2 strings, the new Map at index 0 and the new Room at index 1 
          */
         public ArrayList<String> mendenhallExit(HashMap<String, Room> houseMap, HashMap<String, Room> fordMap, HashMap<String, Room> mendenhallMap) {
             // This room is the same whether or not you have visited it, since there are no events here, so there is just one branch.
@@ -63,8 +63,8 @@ public class MendenhallCenter {
         }
     /**
      * Basement minotaur battle
-     * @param gamePoints
-     * @return
+    * @param currentPlaythrough - the GameLoop object we created in the main of GameLoop
+    * @return GameLoop - the GameLoop updated with new point and inventory values
      */
         public int basement(int gamePoints) {
             // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -134,9 +134,6 @@ public class MendenhallCenter {
                     if (winOrLose == false) {
                         System.out.println("You hunch over, trembling, nerves frayed with the hope that your crush will come back for you, but they're now nowhere to be seen. You stand frozen and left behind as the Minotaur points at laughs at you for being such a complete and utter loser. Better luck next time...\n");
                     }
-
-
             } return gamePoints;
-    
         }
 }
