@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * A class FordHall that contains methods for each room in the Ford map used to execute events in this location when we are in the room.
+ */
 public class MendenhallCenter {
         //    Visited Room Trackers: hasBeen boolean variables that indicate whether or not the player has been in this room before.
         boolean hasBeenB; // has been in the "Basement" room

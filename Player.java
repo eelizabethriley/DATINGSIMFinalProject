@@ -1,5 +1,5 @@
 
-
+/** A class Player that stores information about this user, with a String for name, int for class year, and String for player house */
 public class Player {
     // public ArrayList<String> inventory;
     private String name;
@@ -22,33 +22,54 @@ public class Player {
 
 
     //       ** Accessor methods for the player **
-    // get player name
+
+    /**
+     * Accessor for player name
+     * @return player name
+     */
     public String getName() {
         return this.name;
     }
 
-    // get player's class year
+
+    /**
+     * Accessor for class year
+     * @return player's class year (2026, 2025, 2024, 2023)
+     */
     public int getClassYear() {
         return this.classYear;
     }
 
-    // get player's Smith house
+    /**
+     * Accessor for player house 
+     * @return player's assigned Smith house (Morris, Wilson, Cutter, etc.)
+     */
     public String getPlayerHouse() {
         return this.playerHouse;
     }
 
     //       ** Manipulator methods for the player **
-    // set player name
+
+    /**
+     * Manipulator for player name
+     * @param name the String for the new name to be set
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    // set player's class year
+    /**
+     * Manipulator for class year
+     * @param classYear the int for the class year to be set to (2026, 2025, 2024, 2023)
+     */
     public void setClassYear(int classYear) {
         this.classYear = classYear;
     }
 
-    // set player's Smith house
+    /**
+     * Manipulator for player house
+     * @param playerHouse the string of the house name to set this player's Smith house to (Morris, Wilson, etc.)
+     */
     public void setPlayerHouse(String playerHouse) {
         this.playerHouse = playerHouse;
     }
