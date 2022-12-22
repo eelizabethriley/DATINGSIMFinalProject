@@ -1,3 +1,5 @@
+DESIGN JUSTIFICATION:
+
 To begin, we have the user individualize the character in these intro sequences in GameLoop.java. Originally we had this sequence (where that player can pick a name, year, and house) in its own class but then we figured it'd be better to simply insert it in the GameLoop.java as there wasn't really anything else to put in the class than a lot of print statements. 
 
 Then from that point, after all the user input is collected, the player is told the rules and placed in their house as a starting point. In GameLoop.java, all the HashMaps of available rooms for the player to move through are initialized and populated in the constructor. We did this because it enabled the movement code to be less repetitive and universal in all the other class locations. 
