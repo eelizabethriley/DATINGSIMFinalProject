@@ -18,7 +18,9 @@ public class GameLoop {
 
     public ArrayList<String> inventory;
 
-
+    /**
+     * Constructor for a GameLoop with maps for the 3 main areas of the game, populated with a series of rooms, as well as an ArrayList inventory and int gamePoints.
+     */
     public GameLoop() {
         // Initialize HashMaps for the three areas available in the game
         houseMap = new HashMap<String, Room>();

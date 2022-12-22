@@ -2,8 +2,10 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
 
+/**
+ * A class House that contains methods for each room in the House map used to execute events in this location when we are in the room.
+ */
 public class House {
-
 
     //    Visited Room Trackers: hasBeen boolean variables that indicate whether or not the player has been in this room before.
     boolean hasBeenYD; // has been in the "YourDorm" room
@@ -21,6 +23,9 @@ public class House {
     Scanner userInput = new Scanner(System.in);
     String userResponse = ""; // Storage for user's responses
     
+    /**
+     * Constructor for a house with booleans for locations set to false by default
+     */
     public House() {
         hasBeenYD = false;
         hasBeenDRE = false;
@@ -32,8 +37,8 @@ public class House {
 
 /**
  * The player's dorm sequence
- * @param gamePoints
- * @return gamePoints
+    * @param gamePoints gamePoints from the Gameloop instance we are currently running
+    * @return gamePoints updated points with gain or loss from the events in the room
  */
     public int yourDorm(int gamePoints) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -48,8 +53,8 @@ public class House {
 
     /**
      * The player's dorm sequence and choices
-     * @param gamePoints
-     * @return gamePoints
+    * @param currentPlaythrough - the GameLoop object we created in the main of GameLoop
+    * @return GameLoop - the GameLoop updated with new point and inventory values
      */
     public GameLoop dormRoomEntrance(GameLoop currentPlaythrough) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -169,8 +174,8 @@ public class House {
 
     /**
      * The player's house lounge room sequence
-     * @param gamePoints
-     * @return gamePoints updated points with loss or gain from choices
+     * @param gamePoints gamePoints from the Gameloop instance we are currently running
+     * @return gamePoints updated points with gain or loss from the events in the room
      */
     public int houseLounge(int gamePoints) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -183,8 +188,8 @@ public class House {
     }
         /**
         * The player's library lounge room sequence and choices
-         * @param gamePoints
-         * @return gamePoints gamePoints updated points with loss or gain from choices
+        * @param gamePoints gamePoints from the Gameloop instance we are currently running
+        * @return gamePoints updated points with gain or loss from the events in the room
          */
     public int loungeLibrary(int gamePoints) {
         // Each room has two branches when called, one for when this is your first time here and another for when you've already been to this place.
@@ -226,12 +231,10 @@ public class House {
     /**
      * The player's house and current location exit tracker
      * @param houseMap HashMap<String, Room> from GameLoop that contains all the rooms in the house, so we can set a new room
-     * @param fordMap
-     * @param mendenhallMap
+     * @param fordMap HashMap<String, Room> from GameLoop that contains all the rooms in Ford Hall, so we can set a new room
+     * @param mendenhallMap HashMap<String, Room> from GameLoop that contains all the rooms in Mendenhall, so we can set a new room
      * @return newLocation an ArrayList<String> that contains our destination in 2 strings, the new Map at index 0 and the new Room at index 1 
      */
-    //public Room houseExit(HashMap<String, Room> houseMap, HashMap<String, Room> fordMap, HashMap<String, Room> mendenhallMap) {
-
         public ArrayList<String> houseExit(HashMap<String, Room> houseMap, HashMap<String, Room> fordMap, HashMap<String, Room> mendenhallMap) {
         // This room is the same whether or not you have visited it, since there are no events here, so there is just one branch.
         System.out.println("Where would you like to go from the exit? (n, e, s, w)");

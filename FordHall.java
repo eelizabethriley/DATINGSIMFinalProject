@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/** A class FordHall that contains methods for each room in the Ford map used to execute events in this location when we are in the room.
+ * 
+ */
 public class FordHall {
 
     //    Visited Room Trackers: hasBeen boolean variables that indicate whether or not the player has been in this room before.
@@ -16,8 +19,8 @@ public class FordHall {
     Scanner userInput = new Scanner(System.in);
     String userResponse = ""; // Storage for user's responses
     
-    /**
-     * Starting values for places that the user can go in Ford Hall
+    /** Constructor for FordHall
+     * Boolean variables: Starting values for places that the user can go in Ford Hall
      */
     public FordHall() {
         hasBeenTE = false;
@@ -29,8 +32,8 @@ public class FordHall {
 
     /**
      * The player's terrace edge sequence and options
-     * @param gamePoints
-     * @return gamePoints
+     * @param gamePoints gamePoints from the Gameloop instance we are currently running
+     * @return gamePoints updated points with gain or loss from the events in the room
      */
     public int terraceEdge(int gamePoints) {
         if (hasBeenTE) {
@@ -43,9 +46,8 @@ public class FordHall {
 
     /**
      * The player's terrace sequence and choices 
-     * @param gamePoints
-     * @param inventory
-     * @return gamePoints
+     * @param currentPlaythrough instance of the GameLoop we are currently running, accessed for the inventory and gamePoints
+     * @return currentPlaythrough with updated inventory and points
      */
     public GameLoop terrace(GameLoop currentPlaythrough) {
         if(hasBeenT) {
@@ -117,8 +119,8 @@ public class FordHall {
 
     /**
      *The player's lounge sequence and choices 
-     * @param gamePoints
-     * @return gamePoints
+     * @param gamePoints gamePoints from the Gameloop instance we are currently running
+     * @return gamePoints updated points with gain or loss from the events in the room
      */
     public int lounge(int gamePoints) {
         if(hasBeenL) {
@@ -149,10 +151,9 @@ public class FordHall {
 
     /**
      * The player's hallway sequence
-     * @param gamePoints
-     * @return gamePoints
+     * @param gamePoints gamePoints from the Gameloop instance we are currently running
+     * @return gamePoints updated points with gain or loss from the events in the room
      */
-
     public int hallway(int gamePoints) {
         if(hasBeenH) {
             System.out.println("You stand in the middle of the hallway again, glancing around. There's not much to see here.");
@@ -164,8 +165,8 @@ public class FordHall {
 
     /**
      * The player's bulletin board sequence and choices
-     * @param gamePoints
-     * @return gamePoints
+     * @param currentPlaythrough instance of the GameLoop we are currently running, accessed for the inventory and gamePoints
+     * @return currentPlaythrough with updated inventory and points
      */
     public GameLoop bulletinBoard(GameLoop currentPlaythrough) {
         if(hasBeenBB) {
@@ -241,10 +242,8 @@ public class FordHall {
      * @param mendenhallMap
      * @return currentRoom
      */
-    //public Room fordExit(HashMap<String, Room> houseMap, HashMap<String, Room> fordMap, HashMap<String, Room> mendenhallMap) {
-        // This room is the same whether or not you have visited it, since there are no events here, so there is just one branch.
-
     public ArrayList<String> fordExit(HashMap<String, Room> houseMap, HashMap<String, Room> fordMap, HashMap<String, Room> mendenhallMap) {
+        // This room is the same whether or not you have visited it, since there are no events here, so there is just one branch.
         System.out.println("Pick a new location.");
 
         // This room is the same whether or not you have visited it, since there are no events here

@@ -52,7 +52,7 @@ public class Commands {
     }
         /**
         * Allows players to move to the room east of the current room
-        * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the east direction, and if so which room is north (exitEast)
+        * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the east direction, and if so which room is east (exitEast)
         * @param currentMap the map of the room the player is currently in, we need this to access the exitEast for the room
         * @return currentRoom in the GameLoop we will set the current room to this new room, the exitEast of the room originally passed in
         */
@@ -69,7 +69,7 @@ public class Commands {
 
         /**
         * Allows players to move to room west of the current room
-        * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the north direction, and if so which room is north (exitWest)
+        * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the west direction, and if so which room is west (exitWest)
         * @param currentMap the map of the room the player is currently in, we need this to access the exitWest for the room
         * @return currentRoom in the GameLoop we will set the current room to this new room, the exitWest of the room originally passed in
         */
@@ -85,9 +85,9 @@ public class Commands {
 
     /**
     * Allows players to move to the south side of the room
-     * @param currentRoom
-     * @param currentMap
-     * @return currentRoom
+    * @param currentRoom an instance of Room; the room the player is in when this is called, we need to access this to check if there is a path available in the south direction, and if so which room is south (exitSouth)
+    * @param currentMap the map of the room the player is currently in, we need this to access the exitSouth for the room
+    * @return currentRoom in the GameLoop we will set the current room to this new room, the exitSouth of the room originally passed in
      */
     public Room goSouth(Room currentRoom, HashMap<String, Room> currentMap) {
         if(currentRoom.isExit("S")) {
